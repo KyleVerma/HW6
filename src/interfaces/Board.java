@@ -2,19 +2,18 @@ package interfaces;
 
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 public interface Board {
 	
-	//Hashtable<String, Object> cells; ivars dont go in interface
+	//Automaton cells; ivars dont go in interface
 	//ArrayList<ArrayList<Hashtable<String,Object>>> cells = new ArrayList<ArrayList<Hashtable<String,Object>>>();
 	// a cell is actually a hash table with <String,Object>s
 	
 	/**
 	 * get all cells in board
-	 * @return 2D array of cells (hash tables) containing keys like enabled and color
+	 * @return 2D array of cells (Automaton objects)
 	 */
-	ArrayList<ArrayList<Hashtable<String,Object>>> getCells();
+	public ArrayList<ArrayList<Automaton>> getCells();
 	
 
 	/**
@@ -22,18 +21,19 @@ public interface Board {
 	 * (boardWidth,boardHeight) is lower right hand corner.
 	 * @param x x coord of cell 
 	 * @param y y coord of cell
-	 * @return array of hash tables containing keys like enabled and color
+	 * @return Automaton at (x,y)
+	 * 
 	 */
-	Hashtable<String,Object> getCell(int x, int y);
+	public Automaton getCell(int x, int y);
 	
 	
 	/**
 	 * 
-	 * @param cell cell to store at coords
+	 * @param a Automaton to store at (x,y)
 	 * @param x x location to store cell
 	 * @param y y location to store cell
 	 */
-	void setCell(Hashtable<String,Object> cell, int x, int y);
+	public void setCell(Automaton a, int x, int y);
 
 	
 	
@@ -43,7 +43,7 @@ public interface Board {
 	 * @param x x location of cell to modify
 	 * @param y y location of cell to modify
 	 */
-	void setCellVisibility(boolean visibility, int x, int y);
+	public void setCellVisibility(boolean visibility, int x, int y);
 
 	
 
@@ -54,8 +54,9 @@ public interface Board {
 	 * @param x x location of cell to modify
 	 * @param y y location of cell to modify
 	 */
-	void setCellColor(Color color, int x, int y);
+	public void setCellColor(Color color, int x, int y);
 
 
 	
+	//TODO add get and setters for width and height
 }
