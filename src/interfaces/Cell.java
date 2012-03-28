@@ -1,5 +1,13 @@
 package interfaces;
 
+/**
+ * A Cell represents a spot in the Board.
+ * Each Cell has related Board, Algorithm
+ * and State.  All Cells will share one Algorithm
+ * and one Board but each Cell has its own State.
+ * @author bcharna
+ *
+ */
 public interface Cell {
 	
 	/**

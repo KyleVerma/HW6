@@ -1,8 +1,14 @@
 package interfaces;
 
-import java.awt.Color;
 import java.util.ArrayList;
 
+/**
+ * A Board should contain a 2D list of Cell objects
+ * Once a Board is created, Cells can be added into it
+ * at specific locations
+ * @author bcharna
+ *
+ */
 public interface Board {
 	
 	//Automaton cells; ivars dont go in interface
@@ -49,14 +55,14 @@ public interface Board {
 	public void setHeight(int h);
 	
 	/**
-	 * 
+	 * get Board width
 	 * @return Board width
 	 */
 	public int getWidth();
 	
 	
 	/**
-	 * 
+	 * get Board height
 	 * @return Board height
 	 */
 	public int getHeight();
