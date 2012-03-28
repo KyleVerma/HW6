@@ -20,9 +20,8 @@ public class SimpleVisualizer implements Visualizer{
 	public static void main(String[] args) {
 		Framework fw = new Framework();
 		fw.setVisualizer(new SimpleVisualizer());
-		boolean automaton[][] = new boolean[5][5];
-		int state[][] = new int[5][5];
-		fw.intialstate(automaton, state, 5, 5);
+		Cell cell[][] = new Cell[5][5];
+		fw.intialstate(cell, 5, 5);
 		fw.run();
 	}
 
