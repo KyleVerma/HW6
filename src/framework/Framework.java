@@ -1,13 +1,9 @@
 package framework;
 
-
-
-
-import plugins.ConwayCell;
 import interfaces.Board;
 import interfaces.Visualizer;
 
-public class Framework {
+public interface Framework {
 
 	//private Automaton automaton;
 	private Board board;
@@ -16,23 +12,13 @@ public class Framework {
 //		// TODO Auto-generated method stub
 //		automaton = a;
 //	}
+	
+	// Associates the supplied visualizer to the framework
+	public void setVisualizer(Visualizer v);
 
-	public void setVisualizer(Visualizer v) {
-		// TODO Auto-generated method stub
-		
-	}
+	// Sets up the initial state of the board
+	public void intialstate(Cell[][] a, int x, int y);
 
-	public void intialstate(boolean[][] a, int[][] state, int x, int y) {
-		// TODO Auto-generated method stub
-		board = new BoardImpl();
-		for(int i = 0; i < x; i++)
-			for(int j = 0; j < y; j++)
-				if(a[x][y]) board.setCell(new ConwayCell(), x, y);
-	}
-
-	public void run() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	// Runs the framework
+	public void run();
 }
