@@ -1,10 +1,13 @@
 package plugins;
 
 import interfaces.Algorithm;
-import interfaces.Automaton;
 import interfaces.Board;
+import interfaces.Cell;
+import interfaces.State;
 
-public class SimpleAutomaton implements Automaton {
+public class ConwayCell implements Cell {
+	
+	State s;
 
 	@Override
 	public Board getBoard() {
@@ -39,6 +42,16 @@ public class SimpleAutomaton implements Automaton {
 	public void move(Board b, Direction dir) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public State getState() {
+		return s;
+	}
+
+	@Override
+	public void setState(State s) {
+		this.s = s;
 	}
 
 }

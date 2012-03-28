@@ -1,6 +1,6 @@
 package plugins;
 
-import interfaces.Automaton;
+import interfaces.Cell;
 import interfaces.Board;
 import interfaces.Command;
 
@@ -16,8 +16,8 @@ public class MoveCommand implements Command {
 	}
 	
 	@Override
-	public void execute(Automaton a, Board b) {
-		if(a == null){
+	public void execute(Cell c, Board b) {
+		if(c == null){
 			throw new IllegalArgumentException("Actor cannot be null");
 		}
 		
@@ -28,6 +28,6 @@ public class MoveCommand implements Command {
 		// was : (SimpleAutomaton).move(b, dir); then I added SimpleAutomaton
 		// as subclass of Automaton and added move method in it.
 
-		((SimpleAutomaton)a).move(b, dir); //is this right Kyle?
+		((ConwayCell)c).move(b, dir); //is this right Kyle?
 	}
 }

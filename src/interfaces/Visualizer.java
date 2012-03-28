@@ -22,7 +22,6 @@ public interface Visualizer	{
 	Hashtable<String,Object> getVisualState(int row, int col);
 	
 	
-	int getCellState(int row, int col);
 
 	void paint();
 }

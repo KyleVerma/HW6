@@ -13,50 +13,52 @@ public interface Board {
 	 * get all cells in board
 	 * @return 2D array of cells (Automaton objects)
 	 */
-	public ArrayList<ArrayList<Automaton>> getCells();
+	public ArrayList<ArrayList<Cell>> getCells();
 	
 
 	/**
-	 * get a cell based off coords.  (0,0) is upper left hand corner
+	 * get a Cell based off coords.  (0,0) is upper left hand corner
 	 * (boardWidth,boardHeight) is lower right hand corner.
 	 * @param x x coord of cell 
 	 * @param y y coord of cell
 	 * @return Automaton at (x,y)
 	 * 
 	 */
-	public Automaton getCell(int x, int y);
+	public Cell getCell(int x, int y);
 	
 	
 	/**
 	 * 
-	 * @param a Automaton to store at (x,y)
+	 * @param c Cell to store at (x,y)
 	 * @param x x location to store cell
 	 * @param y y location to store cell
 	 */
-	public void setCell(Automaton a, int x, int y);
+	public void setCell(Cell c, int x, int y);
 
+	
+	/**
+	 * set Board width
+	 * @param w
+	 */
+	public void setWidth(int w);
+	
+	/**
+	 * set Board height
+	 * @param g
+	 */
+	public void setHeight(int h);
+	
+	/**
+	 * 
+	 * @return Board width
+	 */
+	public int getWidth();
 	
 	
 	/**
 	 * 
-	 * @param visisbility state of cell (true of false)
-	 * @param x x location of cell to modify
-	 * @param y y location of cell to modify
+	 * @return Board height
 	 */
-	public void setCellVisibility(boolean visibility, int x, int y);
-
+	public int getHeight();
 	
-
-	
-	/**
-	 * 
-	 * @param color color to set color key of cell
-	 * @param x x location of cell to modify
-	 * @param y y location of cell to modify
-	 */
-	public void setCellColor(Color color, int x, int y);
-
-
-	
-	//TODO add get and setters for width and height
 }

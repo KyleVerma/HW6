@@ -1,8 +1,8 @@
 package plugins;
 
 import interfaces.Algorithm;
-import interfaces.Automaton;
 import interfaces.Board;
+import interfaces.Cell;
 import interfaces.Command;
 
 public class SimpleAlgorithm implements Algorithm {
@@ -24,7 +24,7 @@ public class SimpleAlgorithm implements Algorithm {
 	}
 	
 	@Override
-	public Command act(Board b, Automaton a) {
+	public Command act(Board b, Cell c) {
 		// TODO Auto-generated method stub
 		Direction allDirections[] = Direction.values();
 		return new MoveCommand(allDirections[0]);
