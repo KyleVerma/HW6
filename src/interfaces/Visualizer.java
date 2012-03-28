@@ -1,46 +1,56 @@
 package interfaces;
 
 import java.awt.Color;
-import java.util.Hashtable;
 
 import javax.swing.ImageIcon;
 
 
-
-public interface Visualizer	{
-
+public interface Visualizer {
+	/*
+	 * Sets an association between state and a given visual object
+	 *
+	 *
+	 * @param state - State of the cell
+	 * @param icon - custom visual object to be used for painting the cell
+	 */
+	 void setStateIcon(State state, ImageIcon icon);
 
 	/*
-	 * 
-	 * Javadocs need to be created!
-	 * 
+	 * Sets an association between state and a given visual object
+	 *
+	 *
+	 * @param state - State of the cell
+	 * @param color - color used for painting the cell
 	 */
-	void setVisualState(Hashtable<String,Object> s, int row, int col);
-	void setVisualColor(Color color, int row, int col);
-	void setVisualIcon(ImageIcon i, int row, int col);
-	
-	Hashtable<String,Object> getVisualState(int row, int col);
-	
-	
+	 void setStateColor(State state, Color color);
 
-	void paint();
+
+       /*
+	 * Displays a cellular automaton on a User Interface
+	 *
+	 * @param board - board representing current state of automaton
+	 */
+	 void paint(Board board);
 }
 
-interface VisualizerFactory{
+
+ interface VisualizerFactory{
 	/*
-	 * 
-	 * constructors should be fixed
-	 * 
+	 * Constructs a visualizer compatible with row x col board of cells and
+possible states
+	 *
+	 * @param rows - number of rows
+	 * @param cols - number of columns
+	 * @param states - specifies all possible states of the automaton
 	 */
-	public Visualizer createVisualizer(int row, int col, int[] states);
-	public Visualizer createVisualizer(int row, int col);
+	void createVisualizer(int rows, int cols, State[] states);
+
+	/*
+	 * Constructs a visualizer compatible with row x col board of cells and
+{0,1} states
+	 *
+	 * @param rows - number of rows
+	 * @param cols - number of columns
+	 */
+	void createVisualizer(int rows, int cols);
 }
-
-
-/*
-The intent of the current design is to create a flexible framework for visualizing cellular automatons.
-Visualizer is the main interface and is responsible for displaying the cellular automatons.
-It performs behind-the-scenes actions to prepare the system for display on the user interface.
-It collaborates with the AI interface to inquire about the state of each cell in every step.
-The VisualizerFactory is responsible for constructing visualizers.
-*/
